@@ -1,0 +1,9 @@
+{
+  "Name": "Breeding Pod Tweaks",
+  "Version": "1.0.1",
+  "Id": "Calloatti.BreedingPodTweaks",
+  "MinimumGameVersion": "1.0.0.0",
+  "Description": "Breeding pods continue running until 90%-99% progress even when paused by automation.",
+  "RequiredMods": [{"Id": "Harmony", "MinVersion": "2.4.1"}],
+  "OptionalMods": []
+}

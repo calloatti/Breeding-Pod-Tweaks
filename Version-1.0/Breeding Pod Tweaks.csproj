@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <AssemblyName>breedingpodtweaks</AssemblyName>
+    <RootNamespace>Calloatti.BreedingPodTweaks</RootNamespace>
+    <TimberbornPath>C:\Program Files (x86)\Steam\steamapps\common\timberborn_main\Timberborn_Data\Managed</TimberbornPath>
+  </PropertyGroup>
+
+  <Import Project="CommonModSettings.props" />
+  
+  <ItemGroup>
+  <Publicize Include="Timberborn.BlueprintSystem" IncludeCompilerGeneratedMembers="false" />
+  <Publicize Include="Timberborn.BlockingSystem" IncludeCompilerGeneratedMembers="false" />
+  <Publicize Include="Timberborn.Reproduction" IncludeCompilerGeneratedMembers="false" />
+  <Publicize Include="Timberborn.Emptying" IncludeCompilerGeneratedMembers="false" />
+  <Publicize Include="Timberborn.StatusSystem" IncludeCompilerGeneratedMembers="false" />
+  </ItemGroup>
+
+</Project>
+
