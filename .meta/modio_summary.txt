@@ -1,0 +1,1 @@
+Breeding pods continue running until 90%-99% progress even when paused by automation.
