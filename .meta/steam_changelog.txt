@@ -1,3 +1,2 @@
-* Game Version: 1.0.0.0 - Mod Version: 1.0.1
-- Changed pause icon
-- Bug fixes
+* Game Version: 1.0.0.0 - Mod Version: 1.0.2
+- Fixed target progress generation: now always rolls fresh 90-99% per cycle, never adopts current progress

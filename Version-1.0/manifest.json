@@ -1,6 +1,6 @@
 {
   "Name": "Breeding Pod Tweaks",
-  "Version": "1.0.1",
+  "Version": "1.0.2",
   "Id": "Calloatti.BreedingPodTweaks",
   "MinimumGameVersion": "1.0.0.0",
   "Description": "Breeding pods continue running until 90%-99% progress even when paused by automation.",

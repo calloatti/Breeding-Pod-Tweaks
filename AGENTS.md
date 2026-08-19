@@ -21,7 +21,11 @@ dotnet build -c Release # Release: same deploy (deploy is config-agnostic)
 
 ## Critical Pitfalls
 - **Harmony patches are global.** `BlockableObject.Block/Unblock` and `PausableBuildingTerminal.UpdateBlockable/OnPausedChanged` are shared vanilla classes. Every prefix MUST early-return the original method (`return true`) when `GetComponent<BreedingPodTweaks>()` is null, else the mod breaks blocking/automation for **all buildings**. See `BlockableObjectPatch` / `PausableBuildingTerminalPatch`.
-- **Target progress per cycle:** generated in `EnsureTargetProgressGenerated()` when `_targetProgress <= 0`: adopts current progress if already ≥ 0.90, else random `0.90–0.99`. No save/load — regenerated each `OnEnterFinishedState` (manifest: 90–99%).
+- **Target progress per cycle:** generated in `EnsureTargetProgressGenerated()` when `_targetProgress <= 0`: always rolls fresh `UnityEngine.Random.Range(0.90f, 0.99f)`. No save/load. Regenerated on:
+  - `OnEnterFinishedState` (fires once when pod finishes construction / map loads)
+  - `Tick` when progress drops < 0.05 (new embryo cycle starts)
+  - `OnExitFinishedState` (pod demolished / construction cancelled)
+  Average 94.5%, no persistence across cycles or loads.
 - **Publicized DLLs** in this mod's csproj (all with `IncludeCompilerGeneratedMembers="false"`): `BlueprintSystem`, `BlockingSystem`, `Reproduction`, `Emptying`, `StatusSystem`. Shared publicizer config lives in `CommonModSettings.props` — never edit that file.
 
 ## Verification
@@ -29,3 +33,8 @@ dotnet build -c Release # Release: same deploy (deploy is config-agnostic)
 
 ## Game Version
 - Targets **Timberborn 1.0.x.x** (`Version-1.0` folder); decompiled source at `C:\Users\calloatti\source\repos\timberborn-decompiled-1.0.13.1-b769e88-sw`
+
+## Hard Rule
+DO NOT EVER TOUCH THE DEPLOY FOLDER.
+
+BUILD DOES EVERYTHING, NEVER EVER MESS WITH THE DEPLOY PROCESS.

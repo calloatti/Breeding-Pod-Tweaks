@@ -86,17 +86,7 @@ namespace Calloatti.BreedingPodTweaks
     {
       if (_targetProgress <= 0f)
       {
-        float minProgress = 0.90f;
-        float currentProgress = CalculateProgress();
-
-        if (currentProgress >= minProgress)
-        {
-          _targetProgress = currentProgress;
-        }
-        else
-        {
-          _targetProgress = UnityEngine.Random.Range(minProgress, 0.99f);
-        }
+        _targetProgress = UnityEngine.Random.Range(0.90f, 0.99f);
       }
     }
 
