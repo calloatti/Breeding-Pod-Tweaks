@@ -1,6 +1,6 @@
 {
-  "DepsFile": "C:/Users/calloatti/source/repos/Mods/Breeding Pod Tweaks/.meta/steam_deps.txt",
-  "ItemId": "3779772581",
   "ContentFolder": "C:/Users/calloatti/Documents/Timberborn/Mods/Breeding Pod Tweaks",
-  "ChangeNoteFile": "C:/Users/calloatti/source/repos/Mods/Breeding Pod Tweaks/.meta/steam_changelog.txt"
+  "ItemId": "3779772581",
+  "ChangeNoteFile": "C:/Users/calloatti/source/repos/Mods/Breeding Pod Tweaks/.meta/steam_changelog.txt",
+  "DepsFile": "C:/Users/calloatti/source/repos/Mods/Breeding Pod Tweaks/.meta/steam_deps.txt"
 }
